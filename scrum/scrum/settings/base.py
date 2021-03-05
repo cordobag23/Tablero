@@ -36,21 +36,20 @@ DJANGO_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    #local apps
+     
+)
+
+#mmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmejorandooooooooooooooooooooooooooooo
+#aqui las aplicaciones locales 
+LOCAL_APPS = (
     'applications.equipo', 
     'applications.proyecto', 
     'applications.historias', 
     'applications.tareas', 
     'applications.revision', 
     'applications.impedimentos', 
+    'applications.users',
 )
-
-#mmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmejorandooooooooooooooooooooooooooooo
-#aqui las aplicaciones locales 
-LOCAL_APPS = ()
-
-
-
 
 #aqui aplicaicones de terceros
 THIRD_PARTY_APPS = ()
@@ -110,6 +109,11 @@ AUTH_PASSWORD_VALIDATORS = [
         'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
     },
 ]
+
+###nnnnnnnnnnnnnnnnuuuuuuuuuuuuuuueeeeeeeeeevooooooooooooooooooo
+#le indico q todo el project trabaje bajo mi modelo USERS
+
+AUTH_USER_MODEL = 'users.User'
 
 
 # Internationalization
