@@ -9,20 +9,16 @@ ALLOWED_HOSTS = []
 
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
+# cimomo ya esta importadp el base.local ya esta la funcion q esconde los dats del servidor
+#ahora la llamamos y reemplazamos
 
-"""DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
-}"""
 
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'db_scrum',
-        'USER':'root',
-        'PASSWORD':'',
+        'NAME': get_secret('DB_NAME'),
+        'USER':get_secret('USER'),
+        'PASSWORD':get_secret('PASSWORD'),
         'HOST':'localhost',
         'PORT':3306
     }
@@ -32,3 +28,7 @@ DATABASES = {
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
 STATIC_URL = '/static/'
+STATICFILES_DIRS = [BASE_DIR.child('static')]
+
+MEDIA_URL = '/media/'
+MEDIA_ROOT = BASE_DIR.child('media')
